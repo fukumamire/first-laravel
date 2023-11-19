@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TestController;
+use App\Http\Controllers\HelloController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,4 +13,7 @@ use App\Http\Controllers\TestController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', [TestController::class, 'index']);
+// Route::get('/', [TestController::class, 'index']);
+// ↓ブラウザに画面表示をしよう:controller編
+Route::get('/test', [TestController::class, 'index']);
+Route::get('/hello', [HelloController::class, 'index']);
