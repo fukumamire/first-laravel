@@ -6,12 +6,11 @@ use Illuminate\Http\Request;
 
 class TestController extends Controller
 {
-    public function index(){
-        // ビューに渡すデータを準備
+    public function index($text){ 
         $item = [
             'content' => 'パラメータを渡す',
+            'param' => $text  
         ];
-         // view 関数を使って 'index' ビューを表示し、$item 配列を渡す
         return view('index', $item);
     }
 }
