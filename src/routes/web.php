@@ -17,7 +17,7 @@ use App\Http\Controllers\HelloController;
 Route::get('/', function () {
     return view('welcome');
 });
-// Route::get('/', [TestController::class, 'index']);
+Route::get('/', [TestController::class, 'index']);
 // ↓ブラウザに画面表示をしよう:controller編
 // Route::get('/test', [TestController::class, 'index']);
 Route::get('/hello', [HelloController::class, 'index']);
