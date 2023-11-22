@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\HelloController;
+use App\Http\Controllers\MiddlewareController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,5 +27,8 @@ Route::get('/hello', [HelloController::class, 'index']);
 
 // 問２
 Route::get('/test/{greeting?}', function($greeting = 'Goodmorning') {
-  return $greeting . '=おはようございます';
+return $greeting . '=おはようございます';
 });
+
+Route::get('/middleware', [MiddlewareController::class, 'index']);
+Route::post('/middleware', [MiddlewareController::class, 'post'])->middleware('first');
